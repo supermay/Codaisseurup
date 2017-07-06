@@ -7,6 +7,14 @@ RSpec.describe Event, type: :model do
    it { is_expected.to validate_length_of(:description).is_at_most(500) }
  end
 
+  describe "associations" do
+    it { is_expected.to belong_to :user}
+    it { is_expected.to have_and_belong_to_many :categories}
+  end
+
+
+
+
  describe "#bargain?" do
    let(:bargain_event) { create :event, price: 5 }
    let(:non_bargain_event) { create :event, price: 20 }
