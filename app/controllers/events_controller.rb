@@ -6,18 +6,18 @@ class EventsController < ApplicationController
     @events = current_user.events
   end
 
-  def show;
+  def show
     @categories = @event.categories
     @photos = @event.photos
    end
 
   def new
+    @categories = Category.all
     @event = current_user.events.build
   end
 
   def create
     @event = current_user.events.build(event_params)
-
     if @event.save
       images_params.each do |image|
         @event.photos.create(image: image)
