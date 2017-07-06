@@ -30,6 +30,12 @@
       <span class="label label-success"><%= category.name %></span>
     <% end %>
 
+
+    <h4>Photos</h4>
+    <% @photos.each do |photo| %>
+      <%= image_tag photo.image.thumbnail  %>
+    <% end  %>
+
   </div>
 
 </div>
