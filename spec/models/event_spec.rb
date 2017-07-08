@@ -37,6 +37,18 @@ RSpec.describe Event, type: :model do
  end
 
 
+ describe "association with registration" do
+   let(:event_holder) { create :user, email: "guest@user.com" }
+   let(:event_participant) { create :user, email: "host@user.com" }
+
+   let!(:event) { create :event, user: event_holder }
+   let!(:registration) { create :registration, event: event, user: event_participant }
+
+   it "has participants" do
+     expect(event.participants).to include(event_participant)
+   end
+ end
+
 
 
 

@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Photo.destroy_all
+Registration.destroy_all
 Category.destroy_all
 Event.destroy_all
 Profile.destroy_all
@@ -78,3 +79,9 @@ categories: [it,work_skill]
    photo8 = Photo.create!(remote_image_url: "https://res.cloudinary.com/supermay/image/upload/t_media_lib_thumb/v1499346877/cook3_fw0gk3.jpg", event:event3 )
    photo8 = Photo.create!(remote_image_url: "https://res.cloudinary.com/supermay/image/upload/t_media_lib_thumb/v1499346877/cook2_chrslm.jpg", event:event3 )
    photo9 = Photo.create!(remote_image_url: "https://res.cloudinary.com/supermay/image/upload/t_media_lib_thumb/v1499346861/cook1_kibrtw.jpg", event:event3 )
+
+
+registration1 = Registration.create!(user: alex, event: event1 , status: "true", price: 10, guests_count: 2)
+registration2 = Registration.create!(user: alex, event: event2 , status: "true", price: 10, guests_count: 2)
+registration3 = Registration.create!(user: jiamei, event: event3 , status: "active", price: 10, guests_count: 2)
+registration4 = Registration.create!(user: chuday, event: event3 , status: "active", price: 10, guests_count: 2)
